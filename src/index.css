@@ -1,0 +1,277 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #0B0B0D;
+  --color-secondary: #151519;
+  --color-panel: #1A1D27;
+  --color-yellow: #FFD400;
+  --color-red: #ED1D24;
+  --color-blue: #1769FF;
+  --color-crimson: #8B1118;
+  --color-steel: #777780;
+  --color-paper: #F5F0E8;
+  --color-muted: #8C8C96;
+  --color-border: #2A2A32;
+}
+
+body {
+  background-color: #0B0B0D;
+  color: #F5F0E8;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Comic Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0B0D;
+  border-left: 2px solid #2A2A32;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ED1D24;
+  border: 2px solid #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFD400;
+}
+
+/* Authentic Ben-Day Dots Background */
+.bg-comic-dots {
+  background-image: radial-gradient(rgba(230, 36, 41, 0.18) 1.5px, transparent 1.5px);
+  background-size: 12px 12px;
+}
+
+.bg-comic-dots-yellow {
+  background-image: radial-gradient(rgba(255, 204, 0, 0.22) 1.5px, transparent 1.5px);
+  background-size: 12px 12px;
+}
+
+.bg-comic-dots-blue {
+  background-image: radial-gradient(rgba(0, 102, 255, 0.18) 1.5px, transparent 1.5px);
+  background-size: 12px 12px;
+}
+
+/* Halftone Pattern background utility */
+.bg-halftone {
+  background-image: radial-gradient(#25293A 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+}
+
+/* Comic Action Speed Lines */
+.bg-speed-lines {
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.03) 2px,
+    transparent 2px,
+    transparent 12px
+  );
+}
+
+/* Comic Panel Borders and Hard Shadows */
+.comic-panel {
+  border: 3px solid #000000;
+  box-shadow: 5px 5px 0px 0px #000000;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.comic-panel-hover:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0px 0px #E62429;
+  border-color: #000000;
+}
+
+/* Comic Action Buttons */
+.comic-btn-red {
+  background-color: #E62429;
+  color: #FFFFFF;
+  font-family: 'Bangers', sans-serif;
+  letter-spacing: 0.05em;
+  font-size: 1.1rem;
+  border: 2px solid #000000;
+  box-shadow: 3px 3px 0px 0px #000000;
+  transition: all 0.15s ease;
+}
+
+.comic-btn-red:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px 0px #FFCC00;
+}
+
+.comic-btn-red:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px 0px #000000;
+}
+
+.comic-btn-yellow {
+  background-color: #FFCC00;
+  color: #000000;
+  font-family: 'Bangers', sans-serif;
+  letter-spacing: 0.05em;
+  font-size: 1.1rem;
+  border: 2px solid #000000;
+  box-shadow: 3px 3px 0px 0px #000000;
+  transition: all 0.15s ease;
+}
+
+.comic-btn-yellow:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px 0px #FFFFFF;
+}
+
+.comic-btn-yellow:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px 0px #000000;
+}
+
+.comic-btn-blue {
+  background-color: #0066FF;
+  color: #FFFFFF;
+  font-family: 'Bangers', sans-serif;
+  letter-spacing: 0.05em;
+  font-size: 1.1rem;
+  border: 2px solid #000000;
+  box-shadow: 3px 3px 0px 0px #000000;
+  transition: all 0.15s ease;
+}
+
+.comic-btn-blue:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px 0px #FFCC00;
+}
+
+/* Comic Speech Bubble styling */
+.speech-bubble {
+  position: relative;
+  background: #FFFFFF;
+  color: #000000;
+  border: 2.5px solid #000000;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-weight: 700;
+  box-shadow: 3px 3px 0px 0px #000000;
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 20px;
+  border-width: 10px 10px 0;
+  border-style: solid;
+  border-color: #FFFFFF transparent;
+  display: block;
+  width: 0;
+}
+
+.speech-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -13px;
+  left: 18px;
+  border-width: 13px 12px 0;
+  border-style: solid;
+  border-color: #000000 transparent;
+  display: block;
+  width: 0;
+}
+
+/* Comic Sound Burst Badges */
+.comic-burst-red {
+  background-color: #E62429;
+  color: #FFFFFF;
+  border: 2px solid #000000;
+  box-shadow: 3px 3px 0px 0px #000000;
+  font-family: 'Bangers', sans-serif;
+  letter-spacing: 0.08em;
+  transform: rotate(-3deg);
+}
+
+.comic-burst-yellow {
+  background-color: #FFCC00;
+  color: #000000;
+  border: 2px solid #000000;
+  box-shadow: 3px 3px 0px 0px #000000;
+  font-family: 'Bangers', sans-serif;
+  letter-spacing: 0.08em;
+  transform: rotate(2deg);
+}
+
+/* Text outline effects */
+.comic-text-stroke {
+  -webkit-text-stroke: 1.5px #000000;
+}
+
+.comic-shadow-text {
+  text-shadow: 3px 3px 0px #000000;
+}
+
+/* Diagonal Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 20s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Angular Marvel Section Dividers */
+.comic-cut-top {
+  clip-path: polygon(0 4vw, 100% 0, 100% 100%, 0 100%);
+}
+
+.comic-cut-bottom {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4vw), 0 100%);
+}
+
+.comic-slash {
+  clip-path: polygon(4% 0, 100% 0, 96% 100%, 0 100%);
+}
+
+/* Marvel-style cinematic radial glow & burst */
+.bg-marvel-radial {
+  background: radial-gradient(circle at 75% 35%, rgba(237, 29, 36, 0.22) 0%, rgba(139, 17, 24, 0.12) 40%, transparent 70%);
+}
+
+.bg-comic-sunburst {
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(255, 212, 0, 0.04) 0deg 15deg,
+    transparent 15deg 30deg
+  );
+}
+
+/* Halftone dot overlays */
+.halftone-overlay {
+  background-image: radial-gradient(#2A2A32 1.2px, transparent 1.2px);
+  background-size: 10px 10px;
+}
+
+/* Accessible reduced-motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-marquee {
+    animation: none;
+    transform: none;
+  }
+}
